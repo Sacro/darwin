@@ -43,6 +43,13 @@ export class ConfigService {
       POSTGRES_USER: Joi.string(),
       POSTGRES_PASSWORD: Joi.string(),
       POSTGRES_DATABASE: Joi.string(),
+
+      STOMP_HOST: Joi.string(),
+      STOMP_PORT: Joi.number(),
+      STOMP_USER: Joi.string(),
+      STOMP_PASSCODE: Joi.string(),
+      STOMP_CLIENT_ID: Joi.string(),
+      STOMP_DESTINATION: Joi.string(),
     }).options({
       presence: envConfig.NODE_ENV === 'test' ? 'optional' : 'required',
       stripUnknown: true,
@@ -82,6 +89,17 @@ export class ConfigService {
       username: this.envConfig.POSTGRES_USER,
       password: this.envConfig.POSTGRES_PASSWORD,
       database: this.envConfig.POSTGRES_DATABASE,
+    };
+  }
+
+  get stomp() {
+    return {
+      host: this.envConfig.STOMP_HOST,
+      port: +this.envConfig.STOMP_PORT,
+      login: this.envConfig.STOMP_USER,
+      passcode: this.envConfig.STOMP_PASSCODE,
+      clientId: this.envConfig.STOMP_CLIENT_ID,
+      destination: this.envConfig.STOMP_DESTINATION,
     };
   }
 }
