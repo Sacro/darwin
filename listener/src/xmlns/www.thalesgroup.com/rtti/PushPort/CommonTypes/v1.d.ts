@@ -4,9 +4,10 @@ import * as Primitive from '../../../../xml-primitives';
 // http://localhost:8080/rttiPPTCommonTypes_V1.xsd
 // http://localhost:8080/rttiPPTCommonTypes_v1.xsd
 
+
 interface BaseType {
-  _exists: boolean;
-  _namespace: string;
+	_exists: boolean;
+	_namespace: string;
 }
 /** Activity Type (a set of 6 x 2 character strings).  Full details are provided in Common Interface File End User Specification. */
 export type ActivityType = string;
@@ -58,27 +59,23 @@ type _DelayValueType_2 = Primitive._number;
 
 /** Type used to represent a cancellation or late running reason */
 interface _DisruptionReasonType extends _ReasonCodeType {
-  /** If true, the tiploc attribute should be interpreted as "near", e.g. "signalling failure near Cheadle Hulme". */
-  near?: boolean;
-  /** Optional TIPLOC where the reason refers to, e.g. "signalling failure at Cheadle Hulme". */
-  tiploc?: string;
+	/** If true, the tiploc attribute should be interpreted as "near", e.g. "signalling failure near Cheadle Hulme". */
+	near?: boolean;
+	/** Optional TIPLOC where the reason refers to, e.g. "signalling failure at Cheadle Hulme". */
+	tiploc?: string;
 }
-export interface DisruptionReasonType extends _DisruptionReasonType {
-  constructor: { new (): DisruptionReasonType };
-}
-export var DisruptionReasonType: { new (): DisruptionReasonType };
+export interface DisruptionReasonType extends _DisruptionReasonType { constructor: { new(): DisruptionReasonType }; }
+export var DisruptionReasonType: { new(): DisruptionReasonType };
 
 /** Type used to represent a cancellation or late running reason */
 interface _DisruptionReasonType_2 extends _ReasonCodeType {
-  /** If true, the tiploc attribute should be interpreted as "near", e.g. "signalling failure near Cheadle Hulme". */
-  near?: boolean;
-  /** Optional TIPLOC where the reason refers to, e.g. "signalling failure at Cheadle Hulme". */
-  tiploc?: string;
+	/** If true, the tiploc attribute should be interpreted as "near", e.g. "signalling failure near Cheadle Hulme". */
+	near?: boolean;
+	/** Optional TIPLOC where the reason refers to, e.g. "signalling failure at Cheadle Hulme". */
+	tiploc?: string;
 }
-export interface DisruptionReasonType_2 extends _DisruptionReasonType_2 {
-  constructor: { new (): DisruptionReasonType_2 };
-}
-export var DisruptionReasonType_2: { new (): DisruptionReasonType_2 };
+export interface DisruptionReasonType_2 extends _DisruptionReasonType_2 { constructor: { new(): DisruptionReasonType_2 }; }
+export var DisruptionReasonType_2: { new(): DisruptionReasonType_2 };
 
 /** Defines a platform number */
 export type PlatformType = string;
@@ -232,5 +229,6 @@ type _WTimeType = Primitive._string;
 export type WTimeType_2 = string;
 type _WTimeType_2 = Primitive._string;
 
-export interface document extends BaseType {}
+export interface document extends BaseType {
+}
 export var document: document;
